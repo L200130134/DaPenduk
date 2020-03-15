@@ -1,0 +1,84 @@
+buildscript {
+
+    ext {
+        //SDK and Build tools version
+        minSdk = 16
+        targetSdk = 29
+        buildTools = "29.0.2"
+
+        //AndroidX
+        androidxVersion = "1.1.0"
+        lifecycleVersion = "2.2.0"
+        pagingVersion = "2.1.1"
+        constraintVersion = "1.1.3"
+        swipeRefreshVersion = "1.0.0"
+        androidx = [
+                recyclerView       : "androidx.recyclerview:recyclerview:${androidxVersion}",
+                appCompat          : "androidx.appcompat:appcompat:${androidxVersion}",
+                cardView           : "androidx.cardview:cardview:${androidxVersion}",
+                swiperefreshlayout : "androidx.swiperefreshlayout:swiperefreshlayout:${swipeRefreshVersion}",
+                annotation         : "androidx.annotation:annotation:${androidxVersion}",
+                transition         : "androidx.transition:transition:${androidxVersion}",
+                paging             : "androidx.paging:paging-runtime:${pagingVersion}",
+                lifecycleExtensions: "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
+                constraintLayout   : "androidx.constraintlayout:constraintlayout:${constraintVersion}",
+                lifecycleJava8     : "androidx.lifecycle:lifecycle-common-java8:${lifecycleVersion}"
+        ]
+
+        //Google Material
+        materialVersion = "1.1.0"
+        google = [
+                material: "com.google.android.material:material:${materialVersion}"
+        ]
+
+        //Dagger
+        daggerVersion = "2.13"
+        daggerSupportVersion = "2.16"
+        dagger = [
+                dagger      : "com.google.dagger:dagger:${daggerVersion}",
+                compiler    : "com.google.dagger:dagger-compiler:${daggerVersion}",
+                support     : "com.google.dagger:dagger-android-support:${daggerSupportVersion}",
+                processor   : "com.google.dagger:dagger-android-processor:${daggerVersion}"
+        ]
+
+        //Glide
+        glideVersion = "4.11.0"
+        glide = [
+                glide       :  "com.github.bumptech.glide:glide:${glideVersion}",
+                compiler    :  "com.github.bumptech.glide:compiler:${glideVersion}"
+        ]
+
+        //Retrofit
+        retrofitVersion = "2.6.0"
+        retrofitInterceptorVersion = "3.11.0"
+        retrofitScalarsVersion = "2.5.0"
+        retrofit = [
+                retrofit2        :  "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+                okhttp3          :  "com.squareup.okhttp3:logging-interceptor:${retrofitInterceptorVersion}",
+                converterScalars :  "com.squareup.retrofit2:converter-scalars:${retrofitScalarsVersion}",
+                converterGson    :  "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+        ]
+    }
+
+    repositories {
+        google()
+        jcenter()
+        
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

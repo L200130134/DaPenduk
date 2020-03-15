@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">DaPenduk</string>
+    <string name="app_about">Aplikasi sederhana data penduduk.</string>
+    <string name="toolbar_title">Data Penduduk</string>
+    <string name="toolbar_details_title">Data Informasi</string>
+    <string name="toolbar_details_title_edit">Ubah Data</string>
+    <string name="toolbar_details_title_add">Tambah Data</string>
+    <string name="toolbar_text_search">Pencarian</string>
+    <string name="action_search">Pencarian</string>
+    <string name="action_check">Ceklist</string>
+    <string name="action_about">Tentang</string>
+    <string name="action_logout">Keluar</string>
+    <string name="action_delete">Hapus Data</string>
+</resources>

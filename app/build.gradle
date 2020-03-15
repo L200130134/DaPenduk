@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion targetSdk
+    buildToolsVersion buildTools
+
+    defaultConfig {
+        applicationId "com.rikyahmadfathoni.developer.dapenduk"
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(path: ':module')
+
+    implementation androidx.appCompat
+    implementation androidx.constraintLayout
+    implementation androidx.swiperefreshlayout
+    implementation androidx.paging
+    implementation androidx.lifecycleExtensions
+    annotationProcessor androidx.lifecycleJava8
+    implementation google.material
+
+    implementation glide.glide
+    annotationProcessor glide.compiler
+
+    implementation retrofit.retrofit2
+    implementation retrofit.okhttp3
+    implementation retrofit.converterScalars
+    implementation retrofit.converterGson
+
+    implementation dagger.dagger
+    annotationProcessor dagger.compiler
+    implementation dagger.support
+    annotationProcessor dagger.support
+}

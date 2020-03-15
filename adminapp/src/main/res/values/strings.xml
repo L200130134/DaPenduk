@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Admin DaPenduk</string>
+    <string name="title_activity_admin">Administrator</string>
+    <string name="action_sign_in">Masuk</string>
+    <string name="action_button_save">Simpan</string>
+    <string name="action_button_delete">Hapus</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="progress_title_login">Masuk</string>
+    <string name="progress_message_default">Tunggu Sebentar.</string>
+    <string name="login_invalid_email">Alamat email tidak valid</string>
+    <string name="login_invalid_password">Password minimal 5 karakter</string>
+    <string name="message_save_data">Apakah anda yakin ingin menyimpan?</string>
+    <string name="message_delete_data">Apakah anda yakin ingin menghapus?</string>
+</resources>

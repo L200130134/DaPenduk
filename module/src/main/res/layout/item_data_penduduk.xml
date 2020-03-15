@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageFoto"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignTop="@id/layout_text"
+        android:layout_marginStart="@dimen/padding_normal"
+        android:layout_marginEnd="@dimen/padding_normal"
+        android:background="@drawable/placeholder"/>
+    
+    <LinearLayout
+        android:id="@+id/layout_text"
+        android:layout_marginTop="@dimen/padding_item"
+        android:layout_marginEnd="@dimen/padding_normal"
+        android:layout_marginRight="@dimen/padding_normal"
+        android:gravity="center_vertical"
+        android:minHeight="45dp"
+        android:layout_toEndOf="@id/imageFoto"
+        android:layout_toRightOf="@id/imageFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama Lengkap"
+            android:textSize="16sp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#353535"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/textDeskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="#707070"
+            android:fontFamily="sans-serif" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="@dimen/padding_item"
+        android:layout_below="@id/layout_text"
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="#E6E6E6"/>
+
+</RelativeLayout>

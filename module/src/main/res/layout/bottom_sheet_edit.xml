@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_large"
+        android:clipToPadding="false"
+        android:background="@drawable/bg_rounded_dialog"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masukkan Data"
+            android:textSize="16sp"
+            android:textColor="#3F3F3F"
+            android:textStyle="bold"/>
+
+        <include
+            android:visibility="gone"
+            android:id="@+id/layoutImage"
+            layout="@layout/item_layout_image_picker" />
+
+        <RelativeLayout
+            android:id="@+id/layoutInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/inputValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/datePicker"
+                android:layout_toLeftOf="@id/datePicker"
+                android:hint="Masukkan Value"
+                android:minHeight="30dp"
+                android:layout_marginLeft="-3dp"
+                android:layout_marginStart="-3dp"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/datePicker"
+                android:layout_marginLeft="@dimen/padding_normal"
+                android:layout_marginStart="@dimen/padding_normal"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/inputValue"
+                android:layout_alignBottom="@id/inputValue"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_edit"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutButton"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="-10dp"
+            android:layout_marginEnd="-10dp"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="Cancel"
+                style="@style/Widget.AppCompat.Button.Borderless" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="Save"
+                style="@style/Widget.AppCompat.Button.Borderless" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
