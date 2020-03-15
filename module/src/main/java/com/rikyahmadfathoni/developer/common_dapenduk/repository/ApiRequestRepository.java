@@ -15,6 +15,7 @@ import com.rikyahmadfathoni.developer.common_dapenduk.model.response.LoginRespon
 import com.rikyahmadfathoni.developer.common_dapenduk.network.ApiService;
 import com.rikyahmadfathoni.developer.common_dapenduk.repository.datasource.PendudukDataSource;
 import com.rikyahmadfathoni.developer.common_dapenduk.repository.datasource.PendudukDataSourceFactory;
+import com.rikyahmadfathoni.developer.common_dapenduk.utils.UtilsDialog;
 import com.rikyahmadfathoni.developer.common_dapenduk.utils.UtilsPreferences;
 import com.rikyahmadfathoni.developer.common_dapenduk.utils.UtilsRetrofit;
 import com.rikyahmadfathoni.developer.common_dapenduk.utils.UtilsString;
@@ -284,10 +285,13 @@ public class ApiRequestRepository {
     * */
     public void setFilterData(String value) {
 
-        System.out.println("filter data 1 : " + value);
+        UtilsDialog.showLog(ApiRequestRepository.class,
+                "data lastDataModels value : " + value);
+
+        UtilsDialog.showLog(ApiRequestRepository.class,
+                "data lastDataModels blockFilter : " + blockFilter);
 
         if (!blockFilter) {
-            System.out.println("filter data 2 : " + value);
             PendudukDataSource dataSource = (PendudukDataSource) liveDataSource.getValue();
             if (dataSource != null) {
                 PagedList<DataPendudukModel> pagedList = itemPagedList.getValue();
@@ -296,16 +300,17 @@ public class ApiRequestRepository {
 
                     boolean lastDataEmpty = lastDataModels == null || lastDataModels.isEmpty();
 
-                    if (!lastDataEmpty || !dataPendudukModels.isEmpty()) {
-                        if (!lastDataEmpty) {
-                            filterModels = lastDataModels;
-                        } else {
-                            lastDataModels = dataPendudukModels;
-                            filterModels = lastDataModels;
-                        }
-                        textFilter = UtilsString.validateNull(value);
-                        dataSource.invalidate();
+                    if (!lastDataEmpty) {
+                        UtilsDialog.showLog(ApiRequestRepository.class,
+                                "data lastDataModels set 1 : " + lastDataModels.size());
+                        filterModels = lastDataModels;
+                    }  else {
+                        UtilsDialog.showLog(ApiRequestRepository.class,
+                                "data lastDataModels set 2 : " + dataPendudukModels.size());
+                        filterModels = lastDataModels = dataPendudukModels;
                     }
+                    textFilter = UtilsString.validateNull(value);
+                    dataSource.invalidate();
                 }
             }
         } else {

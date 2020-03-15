@@ -66,7 +66,7 @@ public class PendudukDataSource extends PageKeyedDataSource<Integer, DataPendudu
                       LoadCallback<Integer, DataPendudukModel> callbackAfter,
                       int startData) {
 
-        if (apiRequestRepository.getTextFilter() != null) {
+        if (!UtilsString.isEmpty(apiRequestRepository.getTextFilter())) {
 
             int totalDataSize = apiRequestRepository.getFilterModels().size();
 
@@ -164,13 +164,14 @@ public class PendudukDataSource extends PageKeyedDataSource<Integer, DataPendudu
                     if (!UtilsString.isEmpty(nama)) {
                         if (nama.toLowerCase().contains(value)) {
                             filteredList.add(dataPendudukModel);
+                            //continue;
                         }
                     }
-                    if (!UtilsString.isEmpty(alamat)) {
+                    /*if (!UtilsString.isEmpty(alamat)) {
                         if (alamat.toLowerCase().contains(value)) {
                             filteredList.add(dataPendudukModel);
                         }
-                    }
+                    }*/
                 }
             }
 

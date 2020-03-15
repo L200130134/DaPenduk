@@ -133,10 +133,10 @@ public abstract class BaseMainActivity extends BaseActivity<ActivityMainBinding>
                     }
                     if (!response.isError() && isAdmin()) {
                         if (response.isManipulated()) {
-                            setRefresing(true);
+                            setRefresing(false);
                             apiRequestViewModel.invalidateDataSource();
                         }
-                        onBackPressed(false);
+                        //onBackPressed(false);
                     }
                     UtilsDialog.showSnackbar(binding.fab, response.getMessage());
                 }
